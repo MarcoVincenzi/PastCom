@@ -2,8 +2,8 @@ object PastCom: TPastCom
   Left = 0
   Top = 0
   Caption = 'PastCom'
-  ClientHeight = 201
-  ClientWidth = 447
+  ClientHeight = 528
+  ClientWidth = 753
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
