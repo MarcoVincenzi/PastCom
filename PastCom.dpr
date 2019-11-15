@@ -2,13 +2,13 @@ program PastCom;
 
 uses
   Vcl.Forms,
-  Principal in 'Principal.pas' {PastCom};
+  Principal in 'Principal.pas' {FrmPrincipal};
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TPastCom, PastCom);
+  Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.Run;
 end.
