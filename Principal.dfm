@@ -23,7 +23,6 @@ object FrmPrincipal: TFrmPrincipal
     BevelInner = bvRaised
     BevelOuter = bvNone
     TabOrder = 0
-    ExplicitLeft = -8
     object Label1: TLabel
       Left = 0
       Top = 0
@@ -38,12 +37,13 @@ object FrmPrincipal: TFrmPrincipal
       Font.Style = [fsBold]
       ParentFont = False
     end
-    object SpeedButton1: TSpeedButton
+    object BtnSetor: TSpeedButton
       Left = 0
       Top = 19
       Width = 105
       Height = 78
-      Caption = 'Pessoa'
+      Caption = 'Setor'
+      OnClick = BtnSetorClick
     end
     object SpeedButton2: TSpeedButton
       Left = 111

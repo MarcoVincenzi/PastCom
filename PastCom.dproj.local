@@ -5,5 +5,23 @@
     <Transaction>2019/11/15 15:29:41.000.850,C:\Users\Eliane\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\ProjetoPastCom\Principal.pas</Transaction>
     <Transaction>2019/11/15 15:29:41.000.850,C:\Users\Eliane\Documents\Embarcadero\Studio\Projects\Unit1.dfm=C:\ProjetoPastCom\Principal.dfm</Transaction>
     <Transaction>2019/11/15 15:29:50.000.557,C:\Users\Eliane\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\ProjetoPastCom\PastCom.dproj</Transaction>
+    <Transaction>2019/11/15 17:51:50.000.023,=C:\PastCom\Unit1.pas</Transaction>
+    <Transaction>2019/11/15 17:52:18.000.146,C:\PastCom\Unit1.pas=C:\PastCom\DataModule.pas</Transaction>
+    <Transaction>2019/11/15 17:52:18.000.146,C:\PastCom\Unit1.dfm=C:\PastCom\DataModule.dfm</Transaction>
+    <Transaction>2019/11/19 19:21:49.000.568,=C:\PastCom\Unit1.pas</Transaction>
+    <Transaction>2019/11/19 19:23:01.000.242,C:\PastCom\Unit1.pas=C:\PastCom\Setor.pas</Transaction>
+    <Transaction>2019/11/19 19:23:01.000.242,C:\PastCom\Unit1.dfm=C:\PastCom\Setor.dfm</Transaction>
+    <Transaction>2019/11/19 19:39:00.000.330,=C:\PastCom\Unit1.pas</Transaction>
+    <Transaction>2019/11/19 19:42:38.000.697,=C:\PastCom\frameBotoes.pas</Transaction>
   </Transactions>
+	<ProjectSortOrder AutoSort="0" SortType="0">
+    <File Path="DataModule.pas"/>
+    <File Path="DataModule.dfm"/>
+    <File Path="Principal.pas"/>
+    <File Path="Principal.dfm"/>
+    <File Path="Setor.pas"/>
+    <File Path="Setor.dfm"/>
+    <File Path="frameBotoes.pas"/>
+    <File Path="frameBotoes.dfm"/>
+  </ProjectSortOrder>
 </BorlandProject>
