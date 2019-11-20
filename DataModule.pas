@@ -16,6 +16,8 @@ type
     FDConnection1: TFDConnection;
     FdqSetor: TFDQuery;
     DsSetor: TDataSource;
+    FdqSetor_id: TIntegerField;
+    FdqSetor_descricao: TWideStringField;
   private
     { Private declarations }
   public

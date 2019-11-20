@@ -19,11 +19,24 @@ object DataModule1: TDataModule1
     Top = 16
   end
   object FdqSetor: TFDQuery
+    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'select id, descricao from setor')
     Left = 48
     Top = 88
+    object FdqSetor_id: TIntegerField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'id'
+      Origin = 'id'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object FdqSetor_descricao: TWideStringField
+      DisplayLabel = 'Descri'#231#227'o'
+      FieldName = 'descricao'
+      Origin = 'descricao'
+      Size = 40
+    end
   end
   object DsSetor: TDataSource
     DataSet = FdqSetor

@@ -3,7 +3,7 @@ object FrmSetor: TFrmSetor
   Top = 0
   Caption = 'Setor'
   ClientHeight = 326
-  ClientWidth = 361
+  ClientWidth = 377
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,10 +18,11 @@ object FrmSetor: TFrmSetor
   object PnlArea: TPanel
     Left = 0
     Top = 0
-    Width = 361
+    Width = 377
     Height = 326
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 361
     object LblCodigo: TLabel
       Left = 16
       Top = 141
@@ -41,7 +42,6 @@ object FrmSetor: TFrmSetor
       Top = 160
       Width = 121
       Height = 21
-      DataSource = DataModule1.DsSetor
       TabOrder = 0
     end
     object EdtDescricao: TDBEdit
@@ -49,33 +49,22 @@ object FrmSetor: TFrmSetor
       Top = 211
       Width = 313
       Height = 21
+      DataSource = DataModule1.DsSetor
       TabOrder = 1
     end
     object DBGrid1: TDBGrid
       Left = 16
       Top = 15
-      Width = 329
+      Width = 345
       Height = 120
       DataSource = DataModule1.DsSetor
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       TabOrder = 2
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -11
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
-      Columns = <
-        item
-          Expanded = False
-          FieldName = 'id'
-          Title.Caption = 'C'#243'digo'
-          Visible = True
-        end
-        item
-          Expanded = False
-          FieldName = 'descricao'
-          Title.Caption = 'Descri'#231#227'o'
-          Visible = True
-        end>
     end
     inline FrmBotoes1: TFrmBotoes
       Left = 0
@@ -88,6 +77,18 @@ object FrmSetor: TFrmSetor
       inherited DBNavigator1: TDBNavigator
         DataSource = DataModule1.DsSetor
         Hints.Strings = ()
+      end
+      inherited btnNovo: TButton
+        OnClick = FrmBotoes1btnNovoClick
+      end
+      inherited btnSalvar: TButton
+        OnClick = FrmBotoes1btnSalvarClick
+      end
+      inherited btnEditar: TButton
+        OnClick = FrmBotoes1btnEditarClick
+      end
+      inherited btnExcluir: TButton
+        OnClick = FrmBotoes1btnExcluirClick
       end
     end
   end

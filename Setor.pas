@@ -17,14 +17,18 @@ type
     EdtDescricao: TDBEdit;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
-    LinkPropertyToFieldText: TLinkPropertyToField;
-    LinkPropertyToFieldText2: TLinkPropertyToField;
     LblCodigo: TLabel;
     LblDescricao: TLabel;
     DBGrid1: TDBGrid;
     FrmBotoes1: TFrmBotoes;
+    LinkPropertyToFieldText: TLinkPropertyToField;
+    LinkPropertyToFieldText2: TLinkPropertyToField;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure FrmBotoes1btnNovoClick(Sender: TObject);
+    procedure FrmBotoes1btnSalvarClick(Sender: TObject);
+    procedure FrmBotoes1btnEditarClick(Sender: TObject);
+    procedure FrmBotoes1btnExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -46,6 +50,26 @@ end;
 procedure TFrmSetor.FormShow(Sender: TObject);
 begin
   DataModule1.FdqSetor.Active := True;
+end;
+
+procedure TFrmSetor.FrmBotoes1btnEditarClick(Sender: TObject);
+begin
+  DataModule1.FdqSetor.Edit;
+end;
+
+procedure TFrmSetor.FrmBotoes1btnExcluirClick(Sender: TObject);
+begin
+  DataModule1.FdqSetor.Delete;
+end;
+
+procedure TFrmSetor.FrmBotoes1btnNovoClick(Sender: TObject);
+begin
+  DataModule1.FdqSetor.Insert;
+end;
+
+procedure TFrmSetor.FrmBotoes1btnSalvarClick(Sender: TObject);
+begin
+  DataModule1.FdqSetor.Post;
 end;
 
 end.

@@ -1,5 +1,5 @@
 ﻿[PnlArea]
-Coordinates=10,10,53,51
+Coordinates=10,0,53,51
 Visible=True
 
 []
@@ -18,25 +18,45 @@ Visible=False
 Coordinates=163,1,120,33
 
 [BindSourceDB1]
-Coordinates=250,10,112,105
+Coordinates=600,10,112,105
 
 [BindingsList1]
 Coordinates=143,1,82,33
 
 [EdtCodigo]
-Coordinates=70,10,66,51
+Coordinates=440,20,66,51
 ExplicitSubNodes=Text
+Visible=True
 
 [EdtDescricao]
-Coordinates=70,70,80,51
+Coordinates=440,110,80,51
 ExplicitSubNodes=Text
+Visible=True
 
 [LblDescricao]
-Coordinates=155,71,79,51
+Coordinates=80,0,79,51
 
 [LblCodigo]
-Coordinates=263,134,65,51
+Coordinates=340,160,65,51
 
 [DBGrid1]
-Coordinates=11,80,56,33
+Coordinates=10,70,56,33
+
+[FrmBotoes1]
+Coordinates=0,110,74,33
+
+[FrmBotoes1.btnSalvar]
+Coordinates=250,90,124,51
+
+[FrmBotoes1.btnNovo]
+Coordinates=20,160,119,51
+
+[FrmBotoes1.btnExcluir]
+Coordinates=100,90,127,51
+
+[FrmBotoes1.btnEditar]
+Coordinates=180,160,122,51
+
+[FrmBotoes1.DBNavigator1]
+Coordinates=180,20,145,51
 
