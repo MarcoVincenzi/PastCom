@@ -13,16 +13,16 @@ uses
 type
   TFrmSetor = class(TForm)
     PnlArea: TPanel;
-    EdtCodigo: TDBEdit;
-    EdtDescricao: TDBEdit;
     BindSourceDB1: TBindSourceDB;
     BindingsList1: TBindingsList;
     LblCodigo: TLabel;
     LblDescricao: TLabel;
     DBGrid1: TDBGrid;
     FrmBotoes1: TFrmBotoes;
-    LinkPropertyToFieldText: TLinkPropertyToField;
-    LinkPropertyToFieldText2: TLinkPropertyToField;
+    EdtCodigo: TEdit;
+    EdtDescricao: TEdit;
+    LinkControlToField1: TLinkControlToField;
+    LinkControlToField2: TLinkControlToField;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FrmBotoes1btnNovoClick(Sender: TObject);
@@ -30,6 +30,7 @@ type
     procedure FrmBotoes1btnEditarClick(Sender: TObject);
     procedure FrmBotoes1btnExcluirClick(Sender: TObject);
   private
+    procedure ControlarCampos(AHabilitar: Boolean);
     { Private declarations }
   public
     { Public declarations }
@@ -54,6 +55,8 @@ end;
 
 procedure TFrmSetor.FrmBotoes1btnEditarClick(Sender: TObject);
 begin
+  ControlarCampos(True);
+
   DataModule1.FdqSetor.Edit;
 end;
 
@@ -64,12 +67,28 @@ end;
 
 procedure TFrmSetor.FrmBotoes1btnNovoClick(Sender: TObject);
 begin
+  ControlarCampos(True);
+
   DataModule1.FdqSetor.Insert;
 end;
 
 procedure TFrmSetor.FrmBotoes1btnSalvarClick(Sender: TObject);
 begin
   DataModule1.FdqSetor.Post;
+
+  ControlarCampos(False);
+end;
+
+procedure TFrmSetor.ControlarCampos(AHabilitar: Boolean);
+begin
+  EdtCodigo.Enabled := AHabilitar;
+  EdtDescricao.Enabled := AHabilitar;
+
+  if (not(AHabilitar)) then
+  begin
+    EdtCodigo.Clear;
+    EdtDescricao.Clear;
+  end;
 end;
 
 end.

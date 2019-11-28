@@ -22,7 +22,6 @@ object FrmSetor: TFrmSetor
     Height = 326
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 361
     object LblCodigo: TLabel
       Left = 16
       Top = 141
@@ -37,21 +36,6 @@ object FrmSetor: TFrmSetor
       Height = 13
       Caption = 'Descri'#231#227'o:'
     end
-    object EdtCodigo: TDBEdit
-      Left = 16
-      Top = 160
-      Width = 121
-      Height = 21
-      TabOrder = 0
-    end
-    object EdtDescricao: TDBEdit
-      Left = 16
-      Top = 211
-      Width = 313
-      Height = 21
-      DataSource = DataModule1.DsSetor
-      TabOrder = 1
-    end
     object DBGrid1: TDBGrid
       Left = 16
       Top = 15
@@ -59,7 +43,7 @@ object FrmSetor: TFrmSetor
       Height = 120
       DataSource = DataModule1.DsSetor
       Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
-      TabOrder = 2
+      TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -11
@@ -71,7 +55,7 @@ object FrmSetor: TFrmSetor
       Top = 238
       Width = 281
       Height = 82
-      TabOrder = 3
+      TabOrder = 1
       ExplicitTop = 238
       ExplicitWidth = 281
       inherited DBNavigator1: TDBNavigator
@@ -91,6 +75,24 @@ object FrmSetor: TFrmSetor
         OnClick = FrmBotoes1btnExcluirClick
       end
     end
+    object EdtCodigo: TEdit
+      Left = 16
+      Top = 160
+      Width = 121
+      Height = 21
+      Enabled = False
+      TabOrder = 2
+      Text = '2'
+    end
+    object EdtDescricao: TEdit
+      Left = 16
+      Top = 211
+      Width = 345
+      Height = 21
+      Enabled = False
+      TabOrder = 3
+      Text = 'Setor 2'
+    end
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = DataModule1.FdqSetor
@@ -103,19 +105,19 @@ object FrmSetor: TFrmSetor
     OutputConverters = <>
     Left = 284
     Top = 149
-    object LinkPropertyToFieldText: TLinkPropertyToField
+    object LinkControlToField1: TLinkControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       FieldName = 'id'
-      Component = EdtCodigo
-      ComponentProperty = 'Text'
+      Control = EdtCodigo
+      Track = True
     end
-    object LinkPropertyToFieldText2: TLinkPropertyToField
+    object LinkControlToField2: TLinkControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       FieldName = 'descricao'
-      Component = EdtDescricao
-      ComponentProperty = 'Text'
+      Control = EdtDescricao
+      Track = True
     end
   end
 end
