@@ -1,0 +1,46 @@
+unit Pessoa1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Data.DB, Vcl.StdCtrls,
+  Vcl.Grids, Vcl.DBGrids, frameBotoes;
+
+type
+  TPessoa = class(TForm)
+    Panel1: TPanel;
+    FrmBotoes1: TFrmBotoes;
+    DBGrid1: TDBGrid;
+    LblCodigo: TLabel;
+    EdtCodigo: TEdit;
+    LblNome: TLabel;
+    EdtNome: TEdit;
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Pessoa: TPessoa;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule, frameBotoes;
+
+procedure TPessoa.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+ DataModule1.FdqPessoa.Active := False;
+end;
+
+procedure TPessoa.FormShow(Sender: TObject);
+begin
+ DataModule1.FdqPessoa.Active := True;
+end;
+
+end.

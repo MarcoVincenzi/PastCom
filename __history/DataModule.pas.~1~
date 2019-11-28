@@ -18,14 +18,6 @@ type
     DsSetor: TDataSource;
     FdqSetor_id: TIntegerField;
     FdqSetor_descricao: TWideStringField;
-    FdqPessoa: TFDQuery;
-    DsPessoa: TDataSource;
-    FdqPessoaid: TIntegerField;
-    FdqPessoanome: TWideStringField;
-    FdqPessoacpf: TIntegerField;
-    FdqPessoanascimento: TDateField;
-    FdqPessoasexo: TWideStringField;
-    FdqPessoalocalizacaoid: TIntegerField;
   private
     { Private declarations }
   public

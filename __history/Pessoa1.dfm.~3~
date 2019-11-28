@@ -1,0 +1,82 @@
+object Pessoa: TPessoa
+  Left = 0
+  Top = 0
+  Caption = 'Pessoa'
+  ClientHeight = 536
+  ClientWidth = 606
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  OnClose = FormClose
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 606
+    Height = 536
+    Align = alClient
+    Alignment = taRightJustify
+    TabOrder = 0
+    ExplicitLeft = 8
+    ExplicitTop = -8
+    object LblCodigo: TLabel
+      Left = 32
+      Top = 184
+      Width = 37
+      Height = 13
+      Caption = 'C'#243'digo:'
+    end
+    object LblNome: TLabel
+      Left = 38
+      Top = 216
+      Width = 31
+      Height = 13
+      Caption = 'Nome:'
+    end
+    inline FrmBotoes1: TFrmBotoes
+      Left = 176
+      Top = 448
+      Width = 277
+      Height = 82
+      TabOrder = 0
+      ExplicitLeft = 176
+      ExplicitTop = 448
+      inherited DBNavigator1: TDBNavigator
+        Hints.Strings = ()
+      end
+    end
+    object DBGrid1: TDBGrid
+      Left = 32
+      Top = 24
+      Width = 553
+      Height = 121
+      DataSource = DataModule1.DsPessoa
+      TabOrder = 1
+      TitleFont.Charset = DEFAULT_CHARSET
+      TitleFont.Color = clWindowText
+      TitleFont.Height = -11
+      TitleFont.Name = 'Tahoma'
+      TitleFont.Style = []
+    end
+    object EdtCodigo: TEdit
+      Left = 75
+      Top = 181
+      Width = 121
+      Height = 21
+      TabOrder = 2
+    end
+    object EdtNome: TEdit
+      Left = 75
+      Top = 213
+      Width = 121
+      Height = 21
+      TabOrder = 3
+    end
+  end
+end

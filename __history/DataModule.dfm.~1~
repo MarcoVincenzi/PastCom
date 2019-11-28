@@ -11,7 +11,7 @@ object DataModule1: TDataModule1
     Params.Strings = (
       'Database=museu'
       'User_Name=postgres'
-      'Password=postgre'
+      'Password=postgres'
       'DriverID=PG')
     Connected = True
     LoginPrompt = False
@@ -19,6 +19,7 @@ object DataModule1: TDataModule1
     Top = 16
   end
   object FdqSetor: TFDQuery
+    Active = True
     Connection = FDConnection1
     SQL.Strings = (
       'select id, descricao from setor')
@@ -41,44 +42,5 @@ object DataModule1: TDataModule1
     DataSet = FdqSetor
     Left = 112
     Top = 88
-  end
-  object FdqPessoa: TFDQuery
-    Connection = FDConnection1
-    SQL.Strings = (
-      'select * from Pessoa')
-    Left = 48
-    Top = 144
-    object FdqPessoaid: TIntegerField
-      FieldName = 'id'
-      Origin = 'id'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object FdqPessoanome: TWideStringField
-      FieldName = 'nome'
-      Origin = 'nome'
-      Size = 40
-    end
-    object FdqPessoacpf: TIntegerField
-      FieldName = 'cpf'
-      Origin = 'cpf'
-    end
-    object FdqPessoanascimento: TDateField
-      FieldName = 'nascimento'
-      Origin = 'nascimento'
-    end
-    object FdqPessoasexo: TWideStringField
-      FieldName = 'sexo'
-      Origin = 'sexo'
-      FixedChar = True
-      Size = 1
-    end
-    object FdqPessoalocalizacaoid: TIntegerField
-      FieldName = 'localizacaoid'
-      Origin = 'localizacaoid'
-    end
-  end
-  object DsPessoa: TDataSource
-    Left = 112
-    Top = 144
   end
 end
