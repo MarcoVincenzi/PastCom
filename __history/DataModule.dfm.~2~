@@ -15,7 +15,7 @@ object DataModule1: TDataModule1
       'DriverID=PG')
     Connected = True
     LoginPrompt = False
-    Left = 112
+    Left = 152
     Top = 16
   end
   object FdqSetor: TFDQuery
@@ -80,79 +80,5 @@ object DataModule1: TDataModule1
   object DsPessoa: TDataSource
     Left = 112
     Top = 144
-  end
-  object FdqProduto: TFDQuery
-    Connection = FDConnection1
-    SQL.Strings = (
-      'select * from objeto')
-    Left = 48
-    Top = 208
-    object FdqProdutoid: TIntegerField
-      FieldName = 'id'
-      Origin = 'id'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object FdqProdutodescricao: TWideStringField
-      FieldName = 'descricao'
-      Origin = 'descricao'
-      Size = 40
-    end
-    object FdqProdutoaquisicao: TDateField
-      FieldName = 'aquisicao'
-      Origin = 'aquisicao'
-    end
-    object FdqProdutotipoid: TIntegerField
-      FieldName = 'tipoid'
-      Origin = 'tipoid'
-    end
-    object FdqProdutoautorid: TIntegerField
-      FieldName = 'autorid'
-      Origin = 'autorid'
-    end
-    object FdqProdutosetorid: TIntegerField
-      FieldName = 'setorid'
-      Origin = 'setorid'
-    end
-    object FdqProdutoinstituicaoid: TIntegerField
-      FieldName = 'instituicaoid'
-      Origin = 'instituicaoid'
-    end
-  end
-  object DsProduto: TDataSource
-    Left = 112
-    Top = 208
-  end
-  object FdqExposicao: TFDQuery
-    Connection = FDConnection1
-    SQL.Strings = (
-      'select * from exposicao')
-    Left = 48
-    Top = 280
-    object FdqExposicaoid: TIntegerField
-      FieldName = 'id'
-      Origin = 'id'
-      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
-    end
-    object FdqExposicaodescricao: TWideStringField
-      FieldName = 'descricao'
-      Origin = 'descricao'
-      Size = 40
-    end
-    object FdqExposicaoinicio: TDateField
-      FieldName = 'inicio'
-      Origin = 'inicio'
-    end
-    object FdqExposicaofim: TDateField
-      FieldName = 'fim'
-      Origin = 'fim'
-    end
-    object FdqExposicaolocalizacaoid: TIntegerField
-      FieldName = 'localizacaoid'
-      Origin = 'localizacaoid'
-    end
-  end
-  object DsExposicao: TDataSource
-    Left = 112
-    Top = 280
   end
 end

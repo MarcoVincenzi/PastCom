@@ -6,9 +6,7 @@ uses
   DataModule in 'DataModule.pas' {DataModule1: TDataModule},
   Setor in 'Setor.pas' {FrmSetor},
   frameBotoes in 'frameBotoes.pas' {FrmBotoes: TFrame},
-  Pessoa1 in 'Pessoa1.pas' {Pessoa},
-  Produto in 'Produto.pas' {Form1},
-  Explosicao in 'Explosicao.pas' {Form2};
+  Pessoa1 in 'Pessoa1.pas' {Pessoa};
 
 {$R *.res}
 
@@ -19,7 +17,5 @@ begin
   Application.CreateForm(TDataModule1, DataModule1);
   Application.CreateForm(TFrmSetor, FrmSetor);
   Application.CreateForm(TPessoa, Pessoa);
-  Application.CreateForm(TForm1, Form1);
-  Application.CreateForm(TForm2, Form2);
   Application.Run;
 end.
