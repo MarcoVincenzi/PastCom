@@ -1,0 +1,41 @@
+unit Explosicao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.ExtCtrls;
+
+type
+  TForm2 = class(TForm)
+    Panel1: TPanel;
+    DBGrid1: TDBGrid;
+    procedure FormShow(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule;
+
+procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+DataModule1.FdqProduto.Active := False;
+end;
+
+procedure TForm2.FormShow(Sender: TObject);
+begin
+DataModule1.FdqProduto.Active := True;
+end;
+
+end.
