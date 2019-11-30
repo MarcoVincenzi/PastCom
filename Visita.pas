@@ -16,6 +16,7 @@ type
     lblDHEntrada: TLabel;
     lblDHSaida: TLabel;
     procedure btnEntradaClick(Sender: TObject);
+    procedure btnSaidaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -30,8 +31,13 @@ implementation
 {$R *.dfm}
 
 procedure TExposição.btnEntradaClick(Sender: TObject);
- begin
-     lblDHEntrada.Caption := DateTimeToStr(Now);
- end;
+begin
+  lblDHEntrada.Caption := DateTimeToStr(Now);
+end;
+
+procedure TExposição.btnSaidaClick(Sender: TObject);
+begin
+  lblDHSaida.Caption := DateTimeToStr(Now);
+end;
 
 end.
