@@ -67,6 +67,7 @@
       Height = 25
       Caption = 'Sa'#237'da'
       TabOrder = 3
+      OnClick = btnSaidaClick
     end
   end
 end
