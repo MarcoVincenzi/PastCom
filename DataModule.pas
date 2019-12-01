@@ -25,7 +25,17 @@ type
     FdqPessoacpf: TIntegerField;
     FdqPessoanascimento: TDateField;
     FdqPessoasexo: TWideStringField;
-    FdqPessoalocalizacaoid: TIntegerField;
+    FdqEndereco: TFDQuery;
+    DsEndereco: TDataSource;
+    FdqEnderecoid: TIntegerField;
+    FdqEnderecorua: TWideStringField;
+    FdqEndereconumero: TIntegerField;
+    FdqEnderecobairro: TWideStringField;
+    FdqEnderecocomplemento: TWideStringField;
+    FdqEnderecocidade: TWideStringField;
+    FdqEnderecoestado: TWideStringField;
+    FdqEnderecocep: TIntegerField;
+    FdqEnderecoidpessoa: TIntegerField;
   private
     { Private declarations }
   public

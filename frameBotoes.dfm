@@ -3,6 +3,7 @@ object FrmBotoes: TFrmBotoes
   Top = 0
   Width = 277
   Height = 82
+  Align = alBottom
   TabOrder = 0
   object DBNavigator1: TDBNavigator
     Left = 16
@@ -21,23 +22,23 @@ object FrmBotoes: TFrmBotoes
     TabOrder = 1
   end
   object btnSalvar: TButton
-    Left = 77
+    Left = 136
     Top = 40
     Width = 60
     Height = 25
     Caption = 'Salvar'
-    TabOrder = 2
+    TabOrder = 3
   end
   object btnEditar: TButton
-    Left = 138
+    Left = 76
     Top = 40
     Width = 60
     Height = 25
     Caption = 'Editar'
-    TabOrder = 3
+    TabOrder = 2
   end
   object btnExcluir: TButton
-    Left = 199
+    Left = 196
     Top = 40
     Width = 60
     Height = 25

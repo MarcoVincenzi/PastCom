@@ -1,9 +1,9 @@
 ﻿[PnlArea]
-Coordinates=10,0,53,51
+Coordinates=10,179,53,51
 Visible=True
 
 []
-Coordinates=82,1,82,33
+Coordinates=165,107,82,33
 
 [Module Settings]
 ModelLayerNames=
@@ -11,52 +11,52 @@ ActiveLayerNames=
 EditingLayerName=
 
 [DataModule1.FdqSetor]
-Coordinates=250,10,126,33
+Coordinates=450,110,126,33
 Visible=False
 
 [DataModule1.DsSetor]
 Coordinates=163,1,120,33
 
-[BindSourceDB1]
-Coordinates=600,10,112,105
-
-[BindingsList1]
-Coordinates=143,1,82,33
-
 [EdtCodigo]
-Coordinates=440,20,66,51
+Coordinates=660,100,66,51
 ExplicitSubNodes=Text
 Visible=True
 
 [EdtDescricao]
-Coordinates=440,110,80,51
+Coordinates=650,190,80,51
 ExplicitSubNodes=Text
 Visible=True
 
-[LblDescricao]
-Coordinates=80,0,79,51
-
-[LblCodigo]
-Coordinates=340,160,65,51
-
 [DBGrid1]
-Coordinates=10,70,56,33
+Coordinates=139,240,56,33
 
 [FrmBotoes1]
-Coordinates=0,110,74,33
+Coordinates=205,240,74,33
 
 [FrmBotoes1.btnSalvar]
-Coordinates=250,90,124,51
+Coordinates=73,179,124,51
 
 [FrmBotoes1.btnNovo]
-Coordinates=20,160,119,51
+Coordinates=10,240,119,51
 
 [FrmBotoes1.btnExcluir]
-Coordinates=100,90,127,51
+Coordinates=170,70,127,51
 
 [FrmBotoes1.btnEditar]
-Coordinates=180,160,122,51
+Coordinates=200,150,122,51
 
 [FrmBotoes1.DBNavigator1]
-Coordinates=180,20,145,51
+Coordinates=170,10,145,51
+
+[DataModule1.FdqPessoa]
+Coordinates=10,10,136,159
+
+[DataModule1.DsPessoa]
+Coordinates=412,179,130,33
+
+[BindSourceDB1]
+Coordinates=450,110,112,105
+
+[BindingsList1]
+Coordinates=165,1,82,33
 

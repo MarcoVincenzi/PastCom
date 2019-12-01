@@ -45,12 +45,13 @@ object FrmPrincipal: TFrmPrincipal
       Caption = 'Setor'
       OnClick = BtnSetorClick
     end
-    object SpeedButton2: TSpeedButton
+    object BtnPessoa: TSpeedButton
       Left = 111
       Top = 19
       Width = 105
       Height = 78
-      Caption = 'Pessoa1'
+      Caption = 'Pessoa'
+      OnClick = BtnPessoaClick
     end
     object SpeedButton3: TSpeedButton
       Left = 222
