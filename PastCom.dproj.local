@@ -26,5 +26,10 @@
     <File Path="frameBotoes.dfm"/>
     <File Path="Pessoa.pas"/>
     <File Path="Pessoa.dfm"/>
+    <File Path="Explosicao.pas"/>
+    <File Path="Explosicao.dfm"/>
+    <File Path="Pessoa1.pas"/>
+    <File Path="Produto.pas"/>
+    <File Path="Produto.dfm"/>
   </ProjectSortOrder>
 </BorlandProject>

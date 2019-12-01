@@ -28,8 +28,7 @@ type
     procedure FrmBotoes1btnEditarClick(Sender: TObject);
     procedure FrmBotoes1btnExcluirClick(Sender: TObject);
   private
-    procedure ControlarCampos(AHabilitar: Boolean; AHabilitarCodigo: Boolean = False;
-      ALimpar: Boolean = True);
+    procedure ControlarCampos(AHabilitar: Boolean; AHabilitarCodigo: Boolean = False; ALimpar: Boolean = True);
     procedure ControlarBotoes(ABotao: TObject = nil);
 
     procedure FdqSetorAfterScroll(ADataSet: TDataSet);

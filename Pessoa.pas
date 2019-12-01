@@ -49,7 +49,9 @@ type
     procedure FrmBotoes1btnEditarClick(Sender: TObject);
     procedure FrmBotoes1btnExcluirClick(Sender: TObject);
   private
-    procedure ControlarCampos(AHabilitar: Boolean);
+    procedure ControlarCampos(AHabilitar: Boolean; AHabilitarCodigo: Boolean = False;
+      ALimpar: Boolean = True);
+    procedure ControlarBotoes(ABotao: TObject = nil);
 
     procedure FdqPessoaAfterScroll(DataSet: TDataSet);
   public
@@ -63,11 +65,14 @@ implementation
 
 {$R *.dfm}
 
-uses DataModule;
+uses
+  DataModule;
 
 procedure TFrmPessoa.FdqPessoaAfterScroll(DataSet: TDataSet);
 begin
   DataModule1.FdqEndereco.Locate('idpessoa', DataModule1.FdqPessoaid.AsInteger);
+
+  ControlarCampos(False, False, False);
 end;
 
 procedure TFrmPessoa.FormClose(Sender: TObject; var Action: TCloseAction);
@@ -86,18 +91,29 @@ begin
   DataModule1.FdqEndereco.Active := True;
 
   DataModule1.FdqPessoa.AfterScroll := FdqPessoaAfterScroll;
+
+  ControlarBotoes;
 end;
 
 procedure TFrmPessoa.FrmBotoes1btnEditarClick(Sender: TObject);
 begin
   DataModule1.FdqPessoa.Edit;
   DataModule1.FdqEndereco.Edit;
+
+  ControlarCampos(True);
+  ControlarBotoes(Sender);
 end;
 
 procedure TFrmPessoa.FrmBotoes1btnExcluirClick(Sender: TObject);
 begin
   DataModule1.FdqEndereco.Delete;
+
+  DataModule1.FdqPessoa.AfterScroll := nil;
   DataModule1.FdqPessoa.Delete;
+  DataModule1.FdqPessoa.AfterScroll := FdqPessoaAfterScroll;
+
+  ControlarCampos(False, False, False);
+  ControlarBotoes;
 end;
 
 procedure TFrmPessoa.FrmBotoes1btnNovoClick(Sender: TObject);
@@ -105,6 +121,8 @@ begin
   DataModule1.FdqPessoa.Append;
   DataModule1.FdqEndereco.Append;
 
+  ControlarCampos(True, True);
+  ControlarBotoes(Sender);
   EdtNome.SetFocus;
 end;
 
@@ -120,11 +138,68 @@ begin
   DataModule1.FdqEnderecoidpessoa.AsInteger := DataModule1.FdqPessoaid.AsInteger;
 
   DataModule1.FdqEndereco.post;
+
+  ControlarCampos(False);
+  ControlarBotoes;
 end;
 
-procedure TFrmPessoa.ControlarCampos(AHabilitar: Boolean);
+procedure TFrmPessoa.ControlarCampos(AHabilitar: Boolean; AHabilitarCodigo: Boolean = False;
+  ALimpar: Boolean = True);
 begin
   EdtNome.Enabled := AHabilitar;
+  EdtCpf.Enabled := AHabilitar;
+  EdtNascimento.Enabled := AHabilitar;
+  RgbSexo.Enabled := AHabilitar;
+
+  EdtRua.Enabled := AHabilitar;
+  EdtNumero.Enabled := AHabilitar;
+  Edtbairro.Enabled := AHabilitar;
+  EdtComplemento.Enabled := AHabilitar;
+  EdtMunicipio.Enabled := AHabilitar;
+  EdtEstado.Enabled := AHabilitar;
+  EdtCEP.Enabled := AHabilitar;
+
+  if ((not(AHabilitar)) and (ALimpar)) then
+  begin
+    EdtCodigo.Clear;
+    EdtNome.Clear;
+    EdtCpf.Clear;
+    EdtNascimento.Date := Now;
+    RgbSexo.ItemIndex := -1;
+
+    EdtRua.Clear;
+    EdtNumero.Clear;
+    Edtbairro.Clear;
+    EdtComplemento.Clear;
+    EdtMunicipio.Clear;
+    EdtEstado.Clear;
+    EdtCEP.Clear;
+  end;
+end;
+
+procedure TFrmPessoa.ControlarBotoes(ABotao: TObject);
+begin
+  if (ABotao = nil) then
+  begin
+    FrmBotoes1.btnNovo.Enabled := True;
+    FrmBotoes1.btnEditar.Enabled := True;
+    FrmBotoes1.btnSalvar.Enabled := False;
+    FrmBotoes1.btnExcluir.Enabled := True;
+  end
+  else if (ABotao = FrmBotoes1.btnNovo) then
+  begin
+    FrmBotoes1.btnNovo.Enabled := False;
+    FrmBotoes1.btnEditar.Enabled := False;
+    FrmBotoes1.btnSalvar.Enabled := True;
+    FrmBotoes1.btnExcluir.Enabled := True;
+  end
+  else if (ABotao = FrmBotoes1.btnEditar) then
+  begin
+    FrmBotoes1.btnNovo.Enabled := False;
+    FrmBotoes1.btnEditar.Enabled := False;
+    FrmBotoes1.btnSalvar.Enabled := True;
+    FrmBotoes1.btnExcluir.Enabled := False;
+  end;
 end;
 
 end.

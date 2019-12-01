@@ -36,6 +36,22 @@ type
     FdqEnderecoestado: TWideStringField;
     FdqEnderecocep: TIntegerField;
     FdqEnderecoidpessoa: TIntegerField;
+    FdqProduto: TFDQuery;
+    DsProduto: TDataSource;
+    FdqProdutoid: TIntegerField;
+    FdqProdutodescricao: TWideStringField;
+    FdqProdutoaquisicao: TDateField;
+    FdqProdutotipoid: TIntegerField;
+    FdqProdutoautorid: TIntegerField;
+    FdqProdutosetorid: TIntegerField;
+    FdqProdutoinstituicaoid: TIntegerField;
+    FdqExposicao: TFDQuery;
+    DsExposicao: TDataSource;
+    FdqExposicaoid: TIntegerField;
+    FdqExposicaodescricao: TWideStringField;
+    FdqExposicaoinicio: TDateField;
+    FdqExposicaofim: TDateField;
+    FdqExposicaolocalizacaoid: TIntegerField;
   private
     { Private declarations }
   public

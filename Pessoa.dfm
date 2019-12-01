@@ -29,6 +29,7 @@ object FrmPessoa: TFrmPessoa
       Width = 59
       Height = 13
       Caption = 'Nascimento:'
+      Enabled = False
     end
     inline FrmBotoes1: TFrmBotoes
       Left = 1
@@ -36,7 +37,7 @@ object FrmPessoa: TFrmPessoa
       Width = 552
       Height = 82
       Align = alBottom
-      TabOrder = 0
+      TabOrder = 7
       ExplicitLeft = 1
       ExplicitTop = 391
       ExplicitWidth = 552
@@ -75,6 +76,7 @@ object FrmPessoa: TFrmPessoa
       EditLabel.Width = 37
       EditLabel.Height = 13
       EditLabel.Caption = 'C'#243'digo:'
+      Enabled = False
       TabOrder = 1
     end
     object EdtNome: TLabeledEdit
@@ -85,6 +87,7 @@ object FrmPessoa: TFrmPessoa
       EditLabel.Width = 31
       EditLabel.Height = 13
       EditLabel.Caption = 'Nome:'
+      Enabled = False
       TabOrder = 2
     end
     object EdtCpf: TLabeledEdit
@@ -95,6 +98,7 @@ object FrmPessoa: TFrmPessoa
       EditLabel.Width = 23
       EditLabel.Height = 13
       EditLabel.Caption = 'CPF:'
+      Enabled = False
       TabOrder = 3
     end
     object GroupBox1: TGroupBox
@@ -104,7 +108,7 @@ object FrmPessoa: TFrmPessoa
       Height = 149
       Align = alBottom
       Caption = 'Endere'#231'o'
-      TabOrder = 4
+      TabOrder = 6
       object EdtRua: TLabeledEdit
         Left = 15
         Top = 32
@@ -113,6 +117,7 @@ object FrmPessoa: TFrmPessoa
         EditLabel.Width = 23
         EditLabel.Height = 13
         EditLabel.Caption = 'Rua:'
+        Enabled = False
         TabOrder = 0
       end
       object EdtComplemento: TLabeledEdit
@@ -123,7 +128,8 @@ object FrmPessoa: TFrmPessoa
         EditLabel.Width = 69
         EditLabel.Height = 13
         EditLabel.Caption = 'Complemento:'
-        TabOrder = 1
+        Enabled = False
+        TabOrder = 3
       end
       object Edtbairro: TLabeledEdit
         Left = 15
@@ -133,6 +139,7 @@ object FrmPessoa: TFrmPessoa
         EditLabel.Width = 32
         EditLabel.Height = 13
         EditLabel.Caption = 'Bairro:'
+        Enabled = False
         TabOrder = 2
       end
       object EdtMunicipio: TLabeledEdit
@@ -143,7 +150,8 @@ object FrmPessoa: TFrmPessoa
         EditLabel.Width = 47
         EditLabel.Height = 13
         EditLabel.Caption = 'Munic'#237'pio:'
-        TabOrder = 3
+        Enabled = False
+        TabOrder = 4
       end
       object EdtEstado: TLabeledEdit
         Left = 378
@@ -153,7 +161,8 @@ object FrmPessoa: TFrmPessoa
         EditLabel.Width = 37
         EditLabel.Height = 13
         EditLabel.Caption = 'Estado:'
-        TabOrder = 4
+        Enabled = False
+        TabOrder = 5
       end
       object EdtNumero: TLabeledEdit
         Left = 464
@@ -163,7 +172,8 @@ object FrmPessoa: TFrmPessoa
         EditLabel.Width = 41
         EditLabel.Height = 13
         EditLabel.Caption = 'N'#250'mero:'
-        TabOrder = 5
+        Enabled = False
+        TabOrder = 1
       end
       object EdtCEP: TLabeledEdit
         Left = 440
@@ -173,6 +183,7 @@ object FrmPessoa: TFrmPessoa
         EditLabel.Width = 23
         EditLabel.Height = 13
         EditLabel.Caption = 'CEP:'
+        Enabled = False
         TabOrder = 6
       end
     end
@@ -183,6 +194,7 @@ object FrmPessoa: TFrmPessoa
       Height = 35
       Caption = 'Sexo:'
       Columns = 2
+      Enabled = False
       Items.Strings = (
         'Masculino'
         'Feminino')
@@ -193,7 +205,10 @@ object FrmPessoa: TFrmPessoa
       Top = 214
       Width = 149
       Height = 21
-      TabOrder = 6
+      Date = 43800.678985578710000000
+      Time = 43800.678985578710000000
+      Enabled = False
+      TabOrder = 4
     end
     object DBGrid1: TDBGrid
       Left = 1
@@ -202,7 +217,8 @@ object FrmPessoa: TFrmPessoa
       Height = 144
       Align = alTop
       DataSource = DataModule1.DsPessoa
-      TabOrder = 7
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
+      TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
       TitleFont.Color = clWindowText
       TitleFont.Height = -11

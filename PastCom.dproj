@@ -137,13 +137,21 @@
             <Form>FrmSetor</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Pessoa.pas">
+            <Form>FrmPessoa</Form>
+        </DCCReference>
         <DCCReference Include="frameBotoes.pas">
             <Form>FrmBotoes</Form>
             <FormType>dfm</FormType>
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
-        <DCCReference Include="Pessoa.pas">
-            <Form>FrmPessoa</Form>
+        <DCCReference Include="Produto.pas">
+            <Form>Form1</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Explosicao.pas">
+            <Form>Form2</Form>
+            <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
