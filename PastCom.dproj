@@ -146,11 +146,19 @@
             <DesignClass>TFrame</DesignClass>
         </DCCReference>
         <DCCReference Include="Produto.pas">
-            <Form>Form1</Form>
+            <Form>FrmProduto</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <DCCReference Include="Explosicao.pas">
             <Form>Form2</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Tipo.pas">
+            <Form>FrmTipo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Autor.pas">
+            <Form>FrmAutor</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

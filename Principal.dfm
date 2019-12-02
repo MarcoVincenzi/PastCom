@@ -58,14 +58,24 @@ object FrmPrincipal: TFrmPrincipal
       Top = 19
       Width = 105
       Height = 78
-      Caption = 'Pessoa2'
+      Caption = 'Tipo'
+      OnClick = SpeedButton3Click
     end
-    object SpeedButton4: TSpeedButton
+    object BtnProduto: TSpeedButton
       Left = 333
       Top = 19
       Width = 105
       Height = 78
-      Caption = 'Pessoa3'
+      Caption = 'Produto'
+      OnClick = BtnProdutoClick
+    end
+    object BtnAutor: TSpeedButton
+      Left = 444
+      Top = 19
+      Width = 105
+      Height = 78
+      Caption = 'Autor'
+      OnClick = BtnAutorClick
     end
   end
 end

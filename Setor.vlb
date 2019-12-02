@@ -28,7 +28,8 @@ ExplicitSubNodes=Text
 Visible=True
 
 [DBGrid1]
-Coordinates=139,240,56,33
+Coordinates=200,280,56,33
+Visible=True
 
 [FrmBotoes1]
 Coordinates=205,240,74,33
@@ -49,7 +50,7 @@ Coordinates=200,150,122,51
 Coordinates=170,10,145,51
 
 [DataModule1.FdqPessoa]
-Coordinates=10,10,136,159
+Coordinates=10,10,136,141
 
 [DataModule1.DsPessoa]
 Coordinates=412,179,130,33
@@ -59,4 +60,34 @@ Coordinates=450,110,112,105
 
 [BindingsList1]
 Coordinates=165,1,82,33
+
+[DataModule1.FdqProduto]
+Coordinates=50,200,139,177
+
+[DataModule1.DsProduto]
+Coordinates=614,1,133,33
+
+[DataModule1.DsExposicao]
+Coordinates=254,471,145,33
+
+[DataModule1.FdqInstituicao]
+Coordinates=0,0,151,87
+
+[DataModule1.FdqEndereco]
+Coordinates=260,210,147,213
+
+[DataModule1.DsEndereco]
+Coordinates=76,366,141,33
+
+[DataModule1.DsInstituicao]
+Coordinates=403,1,145,33
+
+[DataModule1.FdqExposicao]
+Coordinates=403,339,151,141
+
+[DataModule1.DsTipo]
+Coordinates=600,260,116,33
+
+[DataModule1.FdqTipo]
+Coordinates=600,366,121,87
 

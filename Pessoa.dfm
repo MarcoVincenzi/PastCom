@@ -99,6 +99,9 @@ object FrmPessoa: TFrmPessoa
       EditLabel.Height = 13
       EditLabel.Caption = 'CPF:'
       Enabled = False
+      NumbersOnly = True
+      ParentShowHint = False
+      ShowHint = False
       TabOrder = 3
     end
     object GroupBox1: TGroupBox
