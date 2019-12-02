@@ -22,7 +22,6 @@ object Form2: TForm2
     Height = 433
     Align = alClient
     TabOrder = 0
-    ExplicitTop = 32
     object LblCodigo: TLabel
       Left = 56
       Top = 160
@@ -71,13 +70,15 @@ object Form2: TForm2
       TitleFont.Style = []
     end
     inline FrmBotoes1: TFrmBotoes
-      Left = 67
-      Top = 351
-      Width = 277
+      Left = 1
+      Top = 350
+      Width = 379
       Height = 82
+      Align = alBottom
       TabOrder = 1
-      ExplicitLeft = 67
-      ExplicitTop = 351
+      ExplicitLeft = 1
+      ExplicitTop = 350
+      ExplicitWidth = 379
       inherited DBNavigator1: TDBNavigator
         Hints.Strings = ()
       end

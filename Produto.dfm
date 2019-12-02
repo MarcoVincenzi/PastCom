@@ -1,9 +1,9 @@
-object Form1: TForm1
+object FrmProduto: TFrmProduto
   Left = 0
   Top = 0
   Caption = 'Produtos'
-  ClientHeight = 539
-  ClientWidth = 340
+  ClientHeight = 397
+  ClientWidth = 497
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -18,66 +18,72 @@ object Form1: TForm1
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 340
-    Height = 539
+    Width = 497
+    Height = 397
     Align = alClient
     TabOrder = 0
-    ExplicitLeft = -8
-    ExplicitWidth = 691
     object LblCodigo: TLabel
-      Left = 88
-      Top = 184
+      Left = 15
+      Top = 182
       Width = 37
       Height = 13
       Caption = 'C'#243'digo:'
+      Enabled = False
     end
-    object Label2: TLabel
-      Left = 75
-      Top = 216
+    object LblDescricao: TLabel
+      Left = 127
+      Top = 182
       Width = 50
       Height = 13
       Caption = 'Descri'#231#227'o:'
+      Enabled = False
     end
     object LblAquisicao: TLabel
-      Left = 40
-      Top = 248
+      Left = 15
+      Top = 224
       Width = 90
       Height = 13
       Caption = 'Data da Aquisi'#231#227'o:'
+      Enabled = False
     end
     object LblTipo: TLabel
-      Left = 56
-      Top = 304
+      Left = 17
+      Top = 270
       Width = 65
       Height = 13
       Caption = 'Tipo Produto:'
+      Enabled = False
     end
     object LblAutor: TLabel
-      Left = 88
-      Top = 331
+      Left = 127
+      Top = 224
       Width = 31
       Height = 13
       Caption = 'Autor:'
+      Enabled = False
     end
     object LblSetor: TLabel
-      Left = 37
-      Top = 358
+      Left = 249
+      Top = 270
       Width = 82
       Height = 13
       Caption = 'Setor Localizado:'
+      Enabled = False
     end
     object LblInstituicao: TLabel
-      Left = 5
-      Top = 385
+      Left = 15
+      Top = 138
       Width = 116
       Height = 13
       Caption = 'Institui'#231#227'o Pertencente:'
+      Enabled = False
     end
     object DBGrid1: TDBGrid
-      Left = 24
-      Top = 24
-      Width = 305
+      Left = 1
+      Top = 1
+      Width = 495
       Height = 120
+      Align = alTop
       DataSource = DataModule1.DsProduto
       TabOrder = 0
       TitleFont.Charset = DEFAULT_CHARSET
@@ -87,80 +93,127 @@ object Form1: TForm1
       TitleFont.Style = []
     end
     object EdtCodigo: TEdit
-      Left = 136
-      Top = 186
-      Width = 121
+      Left = 15
+      Top = 197
+      Width = 97
       Height = 21
+      Enabled = False
       TabOrder = 1
     end
-    object EdtDescreve: TEdit
-      Left = 136
-      Top = 213
-      Width = 121
+    object EdtDescricao: TEdit
+      Left = 127
+      Top = 197
+      Width = 354
       Height = 21
+      Enabled = False
       TabOrder = 2
     end
-    object DtpAquisicao: TDateTimePicker
-      Left = 136
+    object EdtAquisicao: TDateTimePicker
+      Left = 15
       Top = 240
-      Width = 147
+      Width = 97
       Height = 21
-      Date = 43797.873190231480000000
-      Time = 43797.873190231480000000
+      Date = 43801.805988020830000000
+      Time = 43801.805988020830000000
+      Enabled = False
       TabOrder = 3
     end
-    object CbTipo: TComboBox
-      Left = 136
-      Top = 301
-      Width = 145
+    object CmbTipo: TComboBox
+      Left = 17
+      Top = 284
+      Width = 216
       Height = 21
+      Enabled = False
       TabOrder = 4
+      Items.Strings = (
+        'teste2'
+        'rerereere')
     end
-    object CbAutor: TComboBox
-      Left = 136
-      Top = 328
-      Width = 145
+    object CmbAutor: TComboBox
+      Left = 127
+      Top = 240
+      Width = 354
       Height = 21
+      Enabled = False
       TabOrder = 5
+      Items.Strings = (
+        'Autor 1'
+        'Autor 2'
+        'Autor 3')
     end
-    object CbSetor: TComboBox
-      Left = 136
-      Top = 355
-      Width = 145
+    object CmbSetor: TComboBox
+      Left = 249
+      Top = 284
+      Width = 232
       Height = 21
+      Enabled = False
       TabOrder = 6
+      Items.Strings = (
+        'teste'
+        'dadasd'
+        'dsadasda'
+        '25775257'
+        'dfdsfsdf')
     end
-    object CbInstituicao: TComboBox
-      Left = 136
-      Top = 382
-      Width = 145
+    object CmbInstituicao: TComboBox
+      Left = 15
+      Top = 153
+      Width = 466
       Height = 21
+      Enabled = False
       TabOrder = 7
+      Items.Strings = (
+        'Museu da computa'#231#227'o')
     end
     inline FrmBotoes1: TFrmBotoes
-      Left = 24
-      Top = 440
-      Width = 277
+      Left = 1
+      Top = 314
+      Width = 495
       Height = 82
+      Align = alBottom
       TabOrder = 8
-      ExplicitLeft = 24
-      ExplicitTop = 440
+      ExplicitLeft = 1
+      ExplicitTop = 314
+      ExplicitWidth = 495
       inherited DBNavigator1: TDBNavigator
+        Left = 122
+        DataSource = DataModule1.DsProduto
         Hints.Strings = ()
+        ExplicitLeft = 122
+      end
+      inherited btnNovo: TButton
+        Left = 122
+        OnClick = FrmBotoes1btnNovoClick
+        ExplicitLeft = 122
+      end
+      inherited btnSalvar: TButton
+        Left = 242
+        OnClick = FrmBotoes1btnSalvarClick
+        ExplicitLeft = 242
+      end
+      inherited btnEditar: TButton
+        Left = 182
+        OnClick = FrmBotoes1btnEditarClick
+        ExplicitLeft = 182
+      end
+      inherited btnExcluir: TButton
+        Left = 302
+        OnClick = FrmBotoes1btnExcluirClick
+        ExplicitLeft = 302
       end
     end
   end
   object BindSourceDB1: TBindSourceDB
     DataSet = DataModule1.FdqProduto
     ScopeMappings = <>
-    Left = 304
-    Top = 304
+    Left = 368
+    Top = 24
   end
   object BindingsList1: TBindingsList
     Methods = <>
     OutputConverters = <>
-    Left = 300
-    Top = 253
+    Left = 292
+    Top = 21
     object LinkControlToField1: TLinkControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
@@ -172,33 +225,25 @@ object Form1: TForm1
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       FieldName = 'descricao'
-      Control = EdtDescreve
+      Control = EdtDescricao
       Track = True
     end
     object LinkControlToField3: TLinkControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       FieldName = 'aquisicao'
-      Control = DtpAquisicao
+      Control = EdtAquisicao
       Track = True
-    end
-    object LinkFillControlToField1: TLinkFillControlToField
-      Category = 'Quick Bindings'
-      DataSource = BindSourceDB1
-      FieldName = 'tipoid'
-      Control = CbTipo
-      Track = True
-      AutoFill = True
-      FillExpressions = <>
-      FillHeaderExpressions = <>
-      FillBreakGroups = <>
     end
     object LinkFillControlToField2: TLinkFillControlToField
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       FieldName = 'instituicaoid'
-      Control = CbInstituicao
+      Control = CmbInstituicao
       Track = True
+      FillDataSource = BindSourceDB3
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'descricao'
       AutoFill = True
       FillExpressions = <>
       FillHeaderExpressions = <>
@@ -208,8 +253,11 @@ object Form1: TForm1
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       FieldName = 'autorid'
-      Control = CbAutor
+      Control = CmbAutor
       Track = True
+      FillDataSource = BindSourceDB4
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'descricao'
       AutoFill = True
       FillExpressions = <>
       FillHeaderExpressions = <>
@@ -219,9 +267,23 @@ object Form1: TForm1
       Category = 'Quick Bindings'
       DataSource = BindSourceDB1
       FieldName = 'setorid'
-      Control = CbSetor
+      Control = CmbSetor
       Track = True
       FillDataSource = BindSourceDB2
+      FillValueFieldName = 'id'
+      FillDisplayFieldName = 'descricao'
+      AutoFill = True
+      FillExpressions = <>
+      FillHeaderExpressions = <>
+      FillBreakGroups = <>
+    end
+    object LinkFillControlToField1: TLinkFillControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'tipoid'
+      Control = CmbTipo
+      Track = True
+      FillDataSource = BindSourceDB5
       FillValueFieldName = 'id'
       FillDisplayFieldName = 'descricao'
       AutoFill = True
@@ -233,7 +295,25 @@ object Form1: TForm1
   object BindSourceDB2: TBindSourceDB
     DataSet = DataModule1.FdqSetor
     ScopeMappings = <>
-    Left = 304
-    Top = 360
+    Left = 448
+    Top = 24
+  end
+  object BindSourceDB3: TBindSourceDB
+    DataSet = DataModule1.FdqInstituicao
+    ScopeMappings = <>
+    Left = 448
+    Top = 72
+  end
+  object BindSourceDB4: TBindSourceDB
+    DataSet = DataModule1.FdqAutor
+    ScopeMappings = <>
+    Left = 288
+    Top = 72
+  end
+  object BindSourceDB5: TBindSourceDB
+    DataSet = DataModule1.FdqTipo
+    ScopeMappings = <>
+    Left = 368
+    Top = 72
   end
 end

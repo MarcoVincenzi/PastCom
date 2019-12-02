@@ -13,14 +13,12 @@ uses
 type
   TFrmSetor = class(TForm)
     PnlArea: TPanel;
-    BindSourceDB1: TBindSourceDB;
-    BindingsList1: TBindingsList;
-    LblCodigo: TLabel;
-    LblDescricao: TLabel;
     DBGrid1: TDBGrid;
     FrmBotoes1: TFrmBotoes;
-    EdtCodigo: TEdit;
-    EdtDescricao: TEdit;
+    EdtCodigo: TLabeledEdit;
+    EdtDescricao: TLabeledEdit;
+    BindSourceDB1: TBindSourceDB;
+    BindingsList1: TBindingsList;
     LinkControlToField1: TLinkControlToField;
     LinkControlToField2: TLinkControlToField;
     procedure FormShow(Sender: TObject);
@@ -30,10 +28,10 @@ type
     procedure FrmBotoes1btnEditarClick(Sender: TObject);
     procedure FrmBotoes1btnExcluirClick(Sender: TObject);
   private
-    procedure ControlarCampos(AHabilitar: Boolean);
-    { Private declarations }
-  public
-    { Public declarations }
+    procedure ControlarCampos(AHabilitar: Boolean; AHabilitarCodigo: Boolean = False; ALimpar: Boolean = True);
+    procedure ControlarBotoes(ABotao: TObject = nil);
+
+    procedure FdqSetorAfterScroll(ADataSet: TDataSet);
   end;
 
 var
@@ -51,40 +49,96 @@ end;
 procedure TFrmSetor.FormShow(Sender: TObject);
 begin
   DataModule1.FdqSetor.Active := True;
+
+  DataModule1.FdqSetor.AfterScroll := FdqSetorAfterScroll;
+
+  ControlarBotoes;
+end;
+
+procedure TFrmSetor.FdqSetorAfterScroll(ADataSet: TDataSet);
+begin
+  ControlarCampos(False, False, False);
 end;
 
 procedure TFrmSetor.FrmBotoes1btnEditarClick(Sender: TObject);
 begin
   ControlarCampos(True);
+  ControlarBotoes(Sender);
 
   DataModule1.FdqSetor.Edit;
+
+  EdtDescricao.SetFocus;
 end;
 
 procedure TFrmSetor.FrmBotoes1btnExcluirClick(Sender: TObject);
 begin
   DataModule1.FdqSetor.Delete;
+
+  ControlarBotoes;
+  ControlarCampos(False, False, False);
+
+  DBGrid1.SetFocus;
 end;
 
 procedure TFrmSetor.FrmBotoes1btnNovoClick(Sender: TObject);
 begin
-  ControlarCampos(True);
+  DataModule1.FdqSetor.Append;
 
-  DataModule1.FdqSetor.Insert;
+  ControlarBotoes(Sender);
+  ControlarCampos(True, True);
+
+  EdtDescricao.SetFocus;
 end;
 
 procedure TFrmSetor.FrmBotoes1btnSalvarClick(Sender: TObject);
 begin
-  DataModule1.FdqSetor.Post;
+  if (Trim(EdtDescricao.Text) <> '') then
+  begin
+    DataModule1.FdqSetor.Post;
 
-  ControlarCampos(False);
+    ControlarBotoes;
+    ControlarCampos(False);
+
+    DBGrid1.SetFocus;
+  end
+  else
+  begin
+    ShowMessage('Informe a descrição.');
+    EdtDescricao.SetFocus;
+  end;
 end;
 
-procedure TFrmSetor.ControlarCampos(AHabilitar: Boolean);
+procedure TFrmSetor.ControlarBotoes(ABotao: TObject);
 begin
-  EdtCodigo.Enabled := AHabilitar;
+  if (ABotao = nil) then
+  begin
+    FrmBotoes1.btnNovo.Enabled := True;
+    FrmBotoes1.btnEditar.Enabled := True;
+    FrmBotoes1.btnSalvar.Enabled := False;
+    FrmBotoes1.btnExcluir.Enabled := True;
+  end
+  else if (ABotao = FrmBotoes1.btnNovo) then
+  begin
+    FrmBotoes1.btnNovo.Enabled := False;
+    FrmBotoes1.btnEditar.Enabled := False;
+    FrmBotoes1.btnSalvar.Enabled := True;
+    FrmBotoes1.btnExcluir.Enabled := True;
+  end
+  else if (ABotao = FrmBotoes1.btnEditar) then
+  begin
+    FrmBotoes1.btnNovo.Enabled := False;
+    FrmBotoes1.btnEditar.Enabled := False;
+    FrmBotoes1.btnSalvar.Enabled := True;
+    FrmBotoes1.btnExcluir.Enabled := False;
+  end;
+end;
+
+procedure TFrmSetor.ControlarCampos(AHabilitar: Boolean; AHabilitarCodigo: Boolean;
+  ALimpar: Boolean);
+begin
   EdtDescricao.Enabled := AHabilitar;
 
-  if (not(AHabilitar)) then
+  if ((not(AHabilitar)) and (ALimpar)) then
   begin
     EdtCodigo.Clear;
     EdtDescricao.Clear;

@@ -5,10 +5,12 @@ uses
   Principal in 'Principal.pas' {FrmPrincipal},
   DataModule in 'DataModule.pas' {DataModule1: TDataModule},
   Setor in 'Setor.pas' {FrmSetor},
+  Pessoa in 'Pessoa.pas' {FrmPessoa},
   frameBotoes in 'frameBotoes.pas' {FrmBotoes: TFrame},
-  Pessoa1 in 'Pessoa1.pas' {Pessoa},
-  Produto in 'Produto.pas' {Form1},
-  Explosicao in 'Explosicao.pas' {Form2};
+  Produto in 'Produto.pas' {FrmProduto},
+  Explosicao in 'Explosicao.pas' {Form2},
+  Tipo in 'Tipo.pas' {FrmTipo},
+  Autor in 'Autor.pas' {FrmAutor};
 
 {$R *.res}
 
@@ -17,9 +19,9 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TDataModule1, DataModule1);
-  Application.CreateForm(TFrmSetor, FrmSetor);
-  Application.CreateForm(TPessoa, Pessoa);
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TFrmProduto, FrmProduto);
   Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TFrmTipo, FrmTipo);
+  Application.CreateForm(TFrmAutor, FrmAutor);
   Application.Run;
 end.

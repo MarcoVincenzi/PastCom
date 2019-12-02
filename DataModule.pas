@@ -22,10 +22,19 @@ type
     DsPessoa: TDataSource;
     FdqPessoaid: TIntegerField;
     FdqPessoanome: TWideStringField;
-    FdqPessoacpf: TIntegerField;
     FdqPessoanascimento: TDateField;
     FdqPessoasexo: TWideStringField;
-    FdqPessoalocalizacaoid: TIntegerField;
+    FdqEndereco: TFDQuery;
+    DsEndereco: TDataSource;
+    FdqEnderecoid: TIntegerField;
+    FdqEnderecorua: TWideStringField;
+    FdqEndereconumero: TIntegerField;
+    FdqEnderecobairro: TWideStringField;
+    FdqEnderecocomplemento: TWideStringField;
+    FdqEnderecocidade: TWideStringField;
+    FdqEnderecoestado: TWideStringField;
+    FdqEnderecocep: TIntegerField;
+    FdqEnderecoidpessoa: TIntegerField;
     FdqProduto: TFDQuery;
     DsProduto: TDataSource;
     FdqProdutoid: TIntegerField;
@@ -42,6 +51,19 @@ type
     FdqExposicaoinicio: TDateField;
     FdqExposicaofim: TDateField;
     FdqExposicaolocalizacaoid: TIntegerField;
+    FdqInstituicao: TFDQuery;
+    DsInstituicao: TDataSource;
+    FdqInstituicaoid: TIntegerField;
+    FdqInstituicaodescricao: TWideStringField;
+    FdqTipo: TFDQuery;
+    FdqTipoid: TIntegerField;
+    FdqTipodescricao: TWideStringField;
+    DsTipo: TDataSource;
+    FdqAutor: TFDQuery;
+    DsAutor: TDataSource;
+    FdqAutorid: TIntegerField;
+    FdqAutordescricao: TWideStringField;
+    FdqPessoacpf: TWideStringField;
   private
     { Private declarations }
   public

@@ -46,7 +46,7 @@ implementation
 
 {$R *.dfm}
 
-uses DataModule, frameBotoes;
+uses DataModule;
 
 procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
