@@ -9,7 +9,7 @@ CREATE TABLE exposicao (id SERIAL NOT NULL, descricao varchar(40) NOT NULL, inic
 CREATE TABLE exposicaoItem (exposicaoid int4 NOT NULL, objetoid int4 NOT NULL, PRIMARY KEY (exposicaoid, objetoid));
 CREATE TABLE funcionario (id SERIAL NOT NULL, admissao date NOT NULL, cargo varchar(40), salario numeric(18, 3) NOT NULL, pessoaid int4 NOT NULL, setorid int4 NOT NULL, PRIMARY KEY (id));
 CREATE TABLE Instituicao (id SERIAL NOT NULL, descricao varchar(40) NOT NULL, PRIMARY KEY (id));
-CREATE TABLE localizacao (id SERIAL NOT NULL, rua varchar(40) NOT NULL, numero int4, bairro varchar(40) NOT NULL, complemento varchar(20), cidade varchar(40) NOT NULL, estado char(2) NOT NULL, cep int4 NOT NULL, pessoaid int4 NOT NULL, PRIMARY KEY (id));
+CREATE TABLE localizacao (id SERIAL NOT NULL, rua varchar(40) NOT NULL, numero int4, bairro varchar(40) NOT NULL, complemento varchar(20), cidade varchar(40) NOT NULL, estado char(2) NOT NULL, cep int4 NOT NULL, idpessoa int4 NOT NULL, PRIMARY KEY (id));
 CREATE TABLE manutencao (id SERIAL NOT NULL, objetoid int4 NOT NULL, funcionarioid int4 NOT NULL, PRIMARY KEY (id));
 CREATE TABLE objeto (id SERIAL NOT NULL, descricao varchar(40) NOT NULL, aquisicao date NOT NULL, tipoid int4 NOT NULL, autorid int4 NOT NULL, setorid int4 NOT NULL, Instituicaoid int4 NOT NULL, PRIMARY KEY (id));
 CREATE TABLE objeto_emprestimo (objetoid int4 NOT NULL, emprestimoid int4 NOT NULL, PRIMARY KEY (objetoid, emprestimoid));
@@ -17,7 +17,7 @@ CREATE TABLE pessoa (id SERIAL NOT NULL, nome varchar(40) NOT NULL, cpf varchar(
 CREATE TABLE setor (id SERIAL NOT NULL, descricao varchar(40) NOT NULL, PRIMARY KEY (id));
 CREATE TABLE tipo (id SERIAL NOT NULL, descricao varchar(40) NOT NULL, PRIMARY KEY (id));
 CREATE TABLE visita (id SERIAL NOT NULL, data date NOT NULL, entrada time(7) NOT NULL, saida time(7), pessoaid int4 NOT NULL, exposicaoid int4, PRIMARY KEY (id));
-ALTER TABLE localizacao ADD CONSTRAINT FKlocalizaca98924 FOREIGN KEY (pessoaid) REFERENCES pessoa (id);
+ALTER TABLE localizacao ADD CONSTRAINT FKlocalizaca144383 FOREIGN KEY (idpessoa) REFERENCES pessoa (id);
 ALTER TABLE emprestimo ADD CONSTRAINT FKemprestimo805493 FOREIGN KEY (pessoaid) REFERENCES pessoa (id);
 ALTER TABLE objeto_emprestimo ADD CONSTRAINT FKobjeto_emp838877 FOREIGN KEY (emprestimoid) REFERENCES emprestimo (id);
 ALTER TABLE objeto_emprestimo ADD CONSTRAINT FKobjeto_emp624322 FOREIGN KEY (objetoid) REFERENCES objeto (id);
@@ -43,9 +43,8 @@ ALTER TABLE funcionario ADD CONSTRAINT FKfuncionari477785 FOREIGN KEY (pessoaid)
 
 
 
-
 /* exclui */
-ALTER TABLE localizacao DROP CONSTRAINT FKlocalizaca98924;
+ALTER TABLE localizacao DROP CONSTRAINT FKlocalizaca144383;
 ALTER TABLE emprestimo DROP CONSTRAINT FKemprestimo805493;
 ALTER TABLE objeto_emprestimo DROP CONSTRAINT FKobjeto_emp838877;
 ALTER TABLE objeto_emprestimo DROP CONSTRAINT FKobjeto_emp624322;
