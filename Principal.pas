@@ -8,23 +8,25 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
   System.ImageList, Vcl.ImgList, Vcl.Buttons,
 
-  Setor, Pessoa, Tipo, Produto, Autor, Exposicao, ExposicaoItem, Relatorio, frxClass;
+  Setor, Pessoa, Tipo, Produto, Autor, Exposicao, ExposicaoItem, Relatorio, Sobre, frxClass;
 
 type
   TFrmPrincipal = class(TForm)
     Panel1: TPanel;
-    GroupBox1: TGroupBox;
-    BtnSetor: TSpeedButton;
-    SpeedButton3: TSpeedButton;
-    BtnProduto: TSpeedButton;
-    BtnAutor: TSpeedButton;
+    GroupBox4: TGroupBox;
+    BtnSobre: TSpeedButton;
+    GroupBox5: TGroupBox;
+    BtnRelatorio: TSpeedButton;
     GroupBox2: TGroupBox;
     BtnPessoa: TSpeedButton;
     GroupBox3: TGroupBox;
     EdtExposição: TSpeedButton;
     BtnExposicaoItem: TSpeedButton;
-    GroupBox4: TGroupBox;
-    BtnRelatorio: TSpeedButton;
+    GroupBox1: TGroupBox;
+    BtnSetor: TSpeedButton;
+    SpeedButton3: TSpeedButton;
+    BtnProduto: TSpeedButton;
+    BtnAutor: TSpeedButton;
     procedure BtnSetorClick(Sender: TObject);
     procedure BtnPessoaClick(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
@@ -32,6 +34,7 @@ type
     procedure BtnAutorClick(Sender: TObject);
     procedure EdtExposiçãoClick(Sender: TObject);
     procedure BtnExposicaoItemClick(Sender: TObject);
+    procedure BtnSobreClick(Sender: TObject);
     procedure BtnRelatorioClick(Sender: TObject);
   private
     { Private declarations }
@@ -74,6 +77,12 @@ procedure TFrmPrincipal.BtnRelatorioClick(Sender: TObject);
 begin
   FrmRelatorio := TFrmRelatorio.Create(self);
   FrmRelatorio.ShowModal;
+end;
+
+procedure TFrmPrincipal.BtnSobreClick(Sender: TObject);
+begin
+  FrmSobre := TFrmSobre.Create(self);
+  FrmSobre.ShowModal;
 end;
 
 procedure TFrmPrincipal.BtnSetorClick(Sender: TObject);
