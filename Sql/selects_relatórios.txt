@@ -1,0 +1,32 @@
+/* Select 1  */
+select o1.descricao, o1.datacriacao, a1.descricao  
+  from objeto o1
+ inner join autor a1 on a1.id = o1.autorid
+ where extract(year from o1.aquisicao) in (2019, 2020)
+ order by o1.descricao
+ 
+/* Select 2  */
+select p.id, p.nome
+  from visita v
+ inner join pessoa p on p.id = v.pessoaid
+ where extract(year from v.data) = 2019 
+   and p.sexo = 'F'
+   and p.nascimento < cast(current_date - interval '25 year' as date)
+ order by p.nascimento desc
+ 
+/* Select 3 */
+select t.id, t.descricao, count(o.id) as objetos 
+  from tipo t
+ inner join objeto o on o.tipoid = t.id
+ group by t.id, t.descricao
+having count(o.id) > 0
+ order by objetos desc
+  
+/* Select 4 */
+select e.descricao, e.inicio, e.fim, count(i.objetoid) as qtdeitens
+  from exposicao e
+ inner join exposicaoitem i on i.exposicaoid = e.id
+ where ((extract(month from e.inicio) in (5,6)) or (extract(month from e.fim) in (5,6))) 
+ group by e.descricao, e.inicio, e.fim
+having count(i.objetoid) > 20
+ order by e.inicio
