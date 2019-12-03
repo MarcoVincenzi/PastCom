@@ -123,6 +123,9 @@ begin
 
   ControlarCampos(True, True);
   ControlarBotoes(Sender);
+
+  EdtNascimento.Date := Now;
+
   EdtNome.SetFocus;
 end;
 

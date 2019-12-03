@@ -8,9 +8,11 @@ uses
   Pessoa in 'Pessoa.pas' {FrmPessoa},
   frameBotoes in 'frameBotoes.pas' {FrmBotoes: TFrame},
   Produto in 'Produto.pas' {FrmProduto},
-  Explosicao in 'Explosicao.pas' {Form2},
+  Exposicao in 'Exposicao.pas' {FrmExposicao},
   Tipo in 'Tipo.pas' {FrmTipo},
-  Autor in 'Autor.pas' {FrmAutor};
+  Autor in 'Autor.pas' {FrmAutor},
+  ExposicaoItem in 'ExposicaoItem.pas' {FrmExposicaoItem},
+  Relatorio in 'Relatorio.pas' {FrmRelatorio};
 
 {$R *.res}
 
@@ -20,8 +22,10 @@ begin
   Application.CreateForm(TFrmPrincipal, FrmPrincipal);
   Application.CreateForm(TDataModule1, DataModule1);
   Application.CreateForm(TFrmProduto, FrmProduto);
-  Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TFrmExposicao, FrmExposicao);
   Application.CreateForm(TFrmTipo, FrmTipo);
   Application.CreateForm(TFrmAutor, FrmAutor);
+  Application.CreateForm(TFrmExposicaoItem, FrmExposicaoItem);
+  Application.CreateForm(TFrmRelatorio, FrmRelatorio);
   Application.Run;
 end.

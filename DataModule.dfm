@@ -1,6 +1,6 @@
 object DataModule1: TDataModule1
   OldCreateOrder = False
-  Height = 427
+  Height = 519
   Width = 413
   object FDPhysPgDriverLink1: TFDPhysPgDriverLink
     VendorHome = 'C:\PastCom\Win64\Debug'
@@ -13,7 +13,6 @@ object DataModule1: TDataModule1
       'User_Name=postgres'
       'Password=postgres'
       'DriverID=PG')
-    Connected = True
     LoginPrompt = False
     Left = 112
     Top = 16
@@ -138,6 +137,10 @@ object DataModule1: TDataModule1
       Origin = 'instituicaoid'
       Visible = False
     end
+    object FdqProdutodatacriacao: TDateField
+      FieldName = 'datacriacao'
+      Origin = 'datacriacao'
+    end
   end
   object DsProduto: TDataSource
     DataSet = FdqProduto
@@ -149,33 +152,36 @@ object DataModule1: TDataModule1
     SQL.Strings = (
       'select * from exposicao')
     Left = 48
-    Top = 352
+    Top = 312
     object FdqExposicaoid: TIntegerField
+      AutoGenerateValue = arDefault
+      DisplayLabel = 'C'#243'digo'
       FieldName = 'id'
       Origin = 'id'
       ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
     end
     object FdqExposicaodescricao: TWideStringField
+      DisplayLabel = 'Descri'#231#227'o'
+      DisplayWidth = 38
       FieldName = 'descricao'
       Origin = 'descricao'
       Size = 40
     end
     object FdqExposicaoinicio: TDateField
+      DisplayLabel = 'In'#237'cio'
       FieldName = 'inicio'
       Origin = 'inicio'
     end
     object FdqExposicaofim: TDateField
+      DisplayLabel = 'Fim'
       FieldName = 'fim'
       Origin = 'fim'
     end
-    object FdqExposicaolocalizacaoid: TIntegerField
-      FieldName = 'localizacaoid'
-      Origin = 'localizacaoid'
-    end
   end
   object DsExposicao: TDataSource
+    DataSet = FdqExposicao
     Left = 128
-    Top = 352
+    Top = 312
   end
   object FdqEndereco: TFDQuery
     Connection = FDConnection1
@@ -308,6 +314,138 @@ object DataModule1: TDataModule1
   object DsAutor: TDataSource
     DataSet = FdqAutor
     Left = 128
+    Top = 256
+  end
+  object FdqExposicaoItem: TFDQuery
+    IndexFieldNames = 'exposicaoid;objetoid'
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from exposicaoitem')
+    Left = 48
+    Top = 368
+    object FdqExposicaoItemexposicaoid: TIntegerField
+      FieldName = 'exposicaoid'
+      Origin = 'exposicaoid'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+    object FdqExposicaoItemobjetoid: TIntegerField
+      FieldName = 'objetoid'
+      Origin = 'objetoid'
+      ProviderFlags = [pfInUpdate, pfInWhere, pfInKey]
+    end
+  end
+  object DsExposicaoItem: TDataSource
+    DataSet = FdqExposicaoItem
+    Left = 128
+    Top = 368
+  end
+  object FdqAuxExposicaoItem: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select o.id, o.descricao'
+      '  from exposicaoitem e'
+      '  inner join objeto o on o.id = e.objetoid'
+      '  where e.exposicaoid = :Exposicao')
+    Left = 48
+    Top = 424
+    ParamData = <
+      item
+        Name = 'EXPOSICAO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = 0
+      end>
+    object FdqAuxExposicaoItemid: TIntegerField
+      FieldName = 'id'
+      Origin = 'id'
+    end
+    object FdqAuxExposicaoItemdescricao: TWideStringField
+      FieldName = 'descricao'
+      Origin = 'descricao'
+      Size = 40
+    end
+  end
+  object DsAuxExposicaoItem: TDataSource
+    DataSet = FdqAuxExposicaoItem
+    Left = 128
+    Top = 424
+  end
+  object FdqRelatorio: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      
+        'select i.descricao as instituicao, s.descricao as setor, t.descr' +
+        'icao as tipo, o.id as codigo, o.descricao as descricao, '
+      '       o.datacriacao, a.descricao as autor, o.aquisicao '
+      '  from objeto o'
+      ' inner join setor s on s.id = o.setorid'
+      ' inner join tipo t on t.id = o.tipoid'
+      ' inner join autor a on a.id = o.autorid'
+      ' inner join instituicao i on i.id = o.instituicaoid'
+      'where s.id = :Setor'
+      '  and t.id = :Tipo')
+    Left = 232
+    Top = 256
+    ParamData = <
+      item
+        Name = 'SETOR'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = 0
+      end
+      item
+        Name = 'TIPO'
+        DataType = ftInteger
+        ParamType = ptInput
+        Value = 0
+      end>
+    object FdqRelatorioinstituicao: TWideStringField
+      FieldName = 'instituicao'
+      Origin = 'instituicao'
+      Size = 40
+    end
+    object FdqRelatoriosetor: TWideStringField
+      FieldName = 'setor'
+      Origin = 'setor'
+      Size = 40
+    end
+    object FdqRelatoriotipo: TWideStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'tipo'
+      Origin = 'tipo'
+      Size = 40
+    end
+    object FdqRelatoriocodigo: TIntegerField
+      AutoGenerateValue = arDefault
+      FieldName = 'codigo'
+      Origin = 'codigo'
+    end
+    object FdqRelatoriodescricao: TWideStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'descricao'
+      Origin = 'descricao'
+      Size = 40
+    end
+    object FdqRelatoriodatacriacao: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'datacriacao'
+      Origin = 'datacriacao'
+    end
+    object FdqRelatorioautor: TWideStringField
+      AutoGenerateValue = arDefault
+      FieldName = 'autor'
+      Origin = 'autor'
+      Size = 40
+    end
+    object FdqRelatorioaquisicao: TDateField
+      AutoGenerateValue = arDefault
+      FieldName = 'aquisicao'
+      Origin = 'aquisicao'
+    end
+  end
+  object DsRelatorio: TDataSource
+    DataSet = FdqRelatorio
+    Left = 312
     Top = 256
   end
 end

@@ -41,6 +41,9 @@ type
     BindSourceDB4: TBindSourceDB;
     BindSourceDB5: TBindSourceDB;
     LinkFillControlToField1: TLinkFillControlToField;
+    LblCriacao: TLabel;
+    EdtCriacao: TDateTimePicker;
+    LinkControlToField4: TLinkControlToField;
     procedure FormShow(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure FrmBotoes1btnNovoClick(Sender: TObject);
@@ -93,12 +96,14 @@ end;
 procedure TFrmProduto.ControlarCampos(AHabilitar, AHabilitarCodigo, ALimpar: Boolean);
 begin
   LblDescricao.Enabled := AHabilitar;
+  LblCriacao.Enabled := AHabilitar;
   LblAquisicao.Enabled := AHabilitar;
   LblTipo.Enabled := AHabilitar;
   LblAutor.Enabled := AHabilitar;
   LblSetor.Enabled := AHabilitar;
 
   EdtDescricao.Enabled := AHabilitar;
+  EdtCriacao.Enabled := AHabilitar;
   EdtAquisicao.Enabled := AHabilitar;
   CmbTipo.Enabled := AHabilitar;
   CmbAutor.Enabled := AHabilitar;
@@ -108,6 +113,7 @@ begin
   begin
     EdtCodigo.Clear;
     EdtDescricao.Clear;
+    EdtCriacao.Date := Now;
     EdtAquisicao.Date := Now;
 
     CmbTipo.ItemIndex := -1;
@@ -168,10 +174,11 @@ begin
   DataModule1.FdqProdutoinstituicaoid.AsInteger := 1;
   DataModule1.FdqProdutoaquisicao.AsDateTime := Now;
 
-  // CmbInstituicao.ItemIndex := 0;
-
   ControlarBotoes(Sender);
   ControlarCampos(True);
+
+  EdtCriacao.Date := Now;
+  EdtAquisicao.Date := Now;
 end;
 
 procedure TFrmProduto.FrmBotoes1btnSalvarClick(Sender: TObject);

@@ -50,7 +50,6 @@ type
     FdqExposicaodescricao: TWideStringField;
     FdqExposicaoinicio: TDateField;
     FdqExposicaofim: TDateField;
-    FdqExposicaolocalizacaoid: TIntegerField;
     FdqInstituicao: TFDQuery;
     DsInstituicao: TDataSource;
     FdqInstituicaoid: TIntegerField;
@@ -64,6 +63,25 @@ type
     FdqAutorid: TIntegerField;
     FdqAutordescricao: TWideStringField;
     FdqPessoacpf: TWideStringField;
+    FdqExposicaoItem: TFDQuery;
+    DsExposicaoItem: TDataSource;
+    FdqAuxExposicaoItem: TFDQuery;
+    DsAuxExposicaoItem: TDataSource;
+    FdqExposicaoItemexposicaoid: TIntegerField;
+    FdqExposicaoItemobjetoid: TIntegerField;
+    FdqAuxExposicaoItemid: TIntegerField;
+    FdqAuxExposicaoItemdescricao: TWideStringField;
+    FdqProdutodatacriacao: TDateField;
+    FdqRelatorio: TFDQuery;
+    FdqRelatoriosetor: TWideStringField;
+    FdqRelatoriotipo: TWideStringField;
+    FdqRelatoriocodigo: TIntegerField;
+    FdqRelatoriodescricao: TWideStringField;
+    FdqRelatoriodatacriacao: TDateField;
+    FdqRelatorioautor: TWideStringField;
+    FdqRelatorioaquisicao: TDateField;
+    DsRelatorio: TDataSource;
+    FdqRelatorioinstituicao: TWideStringField;
   private
     { Private declarations }
   public

@@ -39,15 +39,15 @@ object FrmProduto: TFrmProduto
       Enabled = False
     end
     object LblAquisicao: TLabel
-      Left = 15
+      Left = 127
       Top = 224
-      Width = 90
+      Width = 89
       Height = 13
-      Caption = 'Data da Aquisi'#231#227'o:'
+      Caption = 'Data de aquisi'#231#227'o:'
       Enabled = False
     end
     object LblTipo: TLabel
-      Left = 17
+      Left = 15
       Top = 270
       Width = 65
       Height = 13
@@ -55,7 +55,7 @@ object FrmProduto: TFrmProduto
       Enabled = False
     end
     object LblAutor: TLabel
-      Left = 127
+      Left = 249
       Top = 224
       Width = 31
       Height = 13
@@ -76,6 +76,14 @@ object FrmProduto: TFrmProduto
       Width = 116
       Height = 13
       Caption = 'Institui'#231#227'o Pertencente:'
+      Enabled = False
+    end
+    object LblCriacao: TLabel
+      Left = 15
+      Top = 224
+      Width = 79
+      Height = 13
+      Caption = 'Data de cria'#231#227'o:'
       Enabled = False
     end
     object DBGrid1: TDBGrid
@@ -109,45 +117,45 @@ object FrmProduto: TFrmProduto
       TabOrder = 2
     end
     object EdtAquisicao: TDateTimePicker
-      Left = 15
+      Left = 127
       Top = 240
       Width = 97
       Height = 21
       Date = 43801.805988020830000000
       Time = 43801.805988020830000000
       Enabled = False
-      TabOrder = 3
+      TabOrder = 4
     end
     object CmbTipo: TComboBox
-      Left = 17
+      Left = 15
       Top = 284
       Width = 216
       Height = 21
       Enabled = False
-      TabOrder = 4
+      TabOrder = 5
       Items.Strings = (
         'teste2'
         'rerereere')
     end
     object CmbAutor: TComboBox
-      Left = 127
+      Left = 243
       Top = 240
-      Width = 354
+      Width = 238
       Height = 21
       Enabled = False
-      TabOrder = 5
+      TabOrder = 6
       Items.Strings = (
         'Autor 1'
         'Autor 2'
         'Autor 3')
     end
     object CmbSetor: TComboBox
-      Left = 249
+      Left = 244
       Top = 284
-      Width = 232
+      Width = 237
       Height = 21
       Enabled = False
-      TabOrder = 6
+      TabOrder = 7
       Items.Strings = (
         'teste'
         'dadasd'
@@ -161,7 +169,7 @@ object FrmProduto: TFrmProduto
       Width = 466
       Height = 21
       Enabled = False
-      TabOrder = 7
+      TabOrder = 8
       Items.Strings = (
         'Museu da computa'#231#227'o')
     end
@@ -171,7 +179,7 @@ object FrmProduto: TFrmProduto
       Width = 495
       Height = 82
       Align = alBottom
-      TabOrder = 8
+      TabOrder = 9
       ExplicitLeft = 1
       ExplicitTop = 314
       ExplicitWidth = 495
@@ -201,6 +209,16 @@ object FrmProduto: TFrmProduto
         OnClick = FrmBotoes1btnExcluirClick
         ExplicitLeft = 302
       end
+    end
+    object EdtCriacao: TDateTimePicker
+      Left = 15
+      Top = 240
+      Width = 97
+      Height = 21
+      Date = 43801.805988020830000000
+      Time = 43801.805988020830000000
+      Enabled = False
+      TabOrder = 3
     end
   end
   object BindSourceDB1: TBindSourceDB
@@ -290,6 +308,13 @@ object FrmProduto: TFrmProduto
       FillExpressions = <>
       FillHeaderExpressions = <>
       FillBreakGroups = <>
+    end
+    object LinkControlToField4: TLinkControlToField
+      Category = 'Quick Bindings'
+      DataSource = BindSourceDB1
+      FieldName = 'datacriacao'
+      Control = EdtCriacao
+      Track = True
     end
   end
   object BindSourceDB2: TBindSourceDB

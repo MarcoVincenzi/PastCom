@@ -8,22 +8,31 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
   System.ImageList, Vcl.ImgList, Vcl.Buttons,
 
-  Setor, Pessoa, Tipo, Produto, Autor;
+  Setor, Pessoa, Tipo, Produto, Autor, Exposicao, ExposicaoItem, Relatorio, frxClass;
 
 type
   TFrmPrincipal = class(TForm)
     Panel1: TPanel;
-    Label1: TLabel;
+    GroupBox1: TGroupBox;
     BtnSetor: TSpeedButton;
-    BtnPessoa: TSpeedButton;
     SpeedButton3: TSpeedButton;
     BtnProduto: TSpeedButton;
     BtnAutor: TSpeedButton;
+    GroupBox2: TGroupBox;
+    BtnPessoa: TSpeedButton;
+    GroupBox3: TGroupBox;
+    EdtExposição: TSpeedButton;
+    BtnExposicaoItem: TSpeedButton;
+    GroupBox4: TGroupBox;
+    BtnRelatorio: TSpeedButton;
     procedure BtnSetorClick(Sender: TObject);
     procedure BtnPessoaClick(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
     procedure BtnProdutoClick(Sender: TObject);
     procedure BtnAutorClick(Sender: TObject);
+    procedure EdtExposiçãoClick(Sender: TObject);
+    procedure BtnExposicaoItemClick(Sender: TObject);
+    procedure BtnRelatorioClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -43,6 +52,12 @@ begin
   FrmAutor.ShowModal;
 end;
 
+procedure TFrmPrincipal.BtnExposicaoItemClick(Sender: TObject);
+begin
+  FrmExposicaoItem := TFrmExposicaoItem.Create(self);
+  FrmExposicaoItem.ShowModal;
+end;
+
 procedure TFrmPrincipal.BtnPessoaClick(Sender: TObject);
 begin
   FrmPessoa := TFrmPessoa.Create(self);
@@ -55,10 +70,22 @@ begin
   FrmProduto.ShowModal;
 end;
 
+procedure TFrmPrincipal.BtnRelatorioClick(Sender: TObject);
+begin
+  FrmRelatorio := TFrmRelatorio.Create(self);
+  FrmRelatorio.ShowModal;
+end;
+
 procedure TFrmPrincipal.BtnSetorClick(Sender: TObject);
 begin
   FrmSetor := TFrmSetor.Create(self);
   FrmSetor.ShowModal;
+end;
+
+procedure TFrmPrincipal.EdtExposiçãoClick(Sender: TObject);
+begin
+  FrmExposicao := TFrmExposicao.Create(self);
+  FrmExposicao.ShowModal;
 end;
 
 procedure TFrmPrincipal.SpeedButton3Click(Sender: TObject);
